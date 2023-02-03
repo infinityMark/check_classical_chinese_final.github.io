@@ -13,11 +13,6 @@
     <title>文言文查询</title>
 
     <style>
-        body{
-            /* font-family: 'Noto Sans HK', sans-serif; */
-            /* font-family: 'Ma Shan Zheng', cursive; */
-            /* font-family: 'Noto Sans HK', sans-serif; */
-        }
         #head_line{margin-top: 20px;}
         .material-symbols-outlined {
             font-size: 40px;
@@ -266,8 +261,9 @@
         <h1 id="classical_chinese" style="margin-left: 10px;margin-bottom: 20px;" class="out_word">请输入:)</h1>
         <!-- <br id="br"> -->
         <h1 id="translate_the_word" style="margin-left: 10px;margin-bottom: 20px;" class="out_word"></h1>
-        <br class="br">
-        <p id="where_from_paragh"></p>
+        <br>
+        <br>
+        <p id="where_from_paragh" style="margin-left: 10px;"></p>
         <!-- <h3 id="where_from_lesson" style="margin-left: 10px;margin-bottom: 20px;">测试</h3> -->
     </div>
 
@@ -505,13 +501,19 @@
             for(let i=0;i<=classical_chinese_list_number;i++){
                 if(search_chinese_value==classical_chinese_list[i] || search_chinese_value==classical_chinese_hk_list[i]){
                     // console.log("Hello")
-                    back_the_check_finish.style.display="flex"
+                    back_the_check_finish.style.display="block"
                     classical_chinese.innerText=classical_chinese_list[i]+"："
                     // br.style.display="block"
                     translate_the_word.innerText=classical_chinese_traslate_list[i]
                     where_from_paragh.innerText="“"+classical_chinese_paragraph[i]+"”"
                     search_chinese.value=""
-                    delete classical_chinese_list[i]
+                    // let arrss=new Array
+                    // classical_chinese_list
+                    // arrss[0]=classical_chinese_list[i]
+                    // arrss[1]=classical_chinese_list[i]
+                    // console.log(arrss)
+                    // console.log(classical_chinese_list)
+                    // delete classical_chinese_list[i]
                     // continue
                     // if(search_chinese_value==classical_chinese_list[i]){
                     //     alert("Hello")
@@ -520,6 +522,7 @@
                 }
                 else{
                     // console.log("World")
+                    // classical_chinese_list=classical_chinese_list.shift()
                     back_the_check_finish.style.display="flex"
                     classical_chinese.innerText="没有此字"
                     translate_the_word.innerText=""
