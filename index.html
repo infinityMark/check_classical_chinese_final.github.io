@@ -14,7 +14,7 @@
 
     <style>
         body{
-            font-family: 'Noto Sans HK', sans-serif;
+            /* font-family: 'Noto Sans HK', sans-serif; */
             /* font-family: 'Ma Shan Zheng', cursive; */
             /* font-family: 'Noto Sans HK', sans-serif; */
         }
@@ -178,6 +178,49 @@
             z-index: 999;
             display: none;
         }
+
+        @media only screen and (max-width: 1300px){
+            #title_page{
+                border-left: 14px solid #123B57;
+                font-size: 40px;
+            }
+            .material-symbols-outlined{
+                font-size: 100px;
+            }
+            .important_number{
+                font-size: 40px;
+            }
+            #search_chinese{
+                width: 400px;
+                height: 60px;
+                left: 40%;
+            }
+            #strat_serch{
+                font-size: 20px;
+                width: 70px;
+                height: 70px;
+            }
+            #back_the_check_finish{
+                width: 56%;
+                /* float: left; */
+                left: 68%;
+            }
+            #a{
+                font-size: 36px;
+                display: inline;
+                top: 20%;
+                left: 16%;
+                color: #000000;
+            }
+            #b{
+                font-size: 36px;
+                display: inline;
+                top: 30%;
+                left: 5%;
+                color: #000000;
+                margin-left: 0px;
+            }
+        }
     </style>
 </head>
 <body id="background_color">
@@ -256,6 +299,14 @@
             strat_serch.style.transitionDuration=time
             strat_serch.style.border="3px solid #ffffff"
             strat_serch.style.color=white
+
+            if(window.innerWidth>1200){
+                a.style.transitionDuration=time
+                a.style.color=white
+
+                b.style.transitionDuration=time
+                b.style.color=white
+            }
         })
         light.addEventListener("click",function(){
             background_color.style.transitionDuration="1s"
@@ -277,6 +328,14 @@
             strat_serch.style.transitionDuration=time
             strat_serch.style.border="3px solid #000000"
             strat_serch.style.color="#000000"
+
+            if(window.innerWidth>1200){
+                a.style.transitionDuration=time
+                a.style.color="#000000"
+
+                b.style.transitionDuration=time
+                b.style.color="#000000"
+            }
         })
             
         function go_to_check(){
