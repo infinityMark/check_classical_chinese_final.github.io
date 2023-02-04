@@ -36,6 +36,8 @@
 
             font-size: 26px;
             float: left;
+
+            border-left: 10px solid #123B57;
         }
         #big_title_page{
             color: #000000;
@@ -45,7 +47,7 @@
             font-size: 26px;
             float: left;
 
-            border-left: 10px solid #123B57;
+            border-left: 14px solid #6386a6;
             display: none;
         }
         #a{
@@ -107,7 +109,7 @@
             text-align: center;
 
             border-radius: 20px;
-            border: 3px solid #000000;
+            border: 3px solid #85b1e0;
             font-size: 30px;
 
             
@@ -123,7 +125,7 @@
             /* text-align: center; */
 
             border-radius: 20px;
-            border: 3px solid #000000;
+            border: 3px solid #85b1e0;
 
             text-align: center;
             
@@ -203,7 +205,7 @@
             }
             #big_title_page{
                 display: inline;
-                border-left: 14px solid #123B57;
+                /* border-left: 14px solid #123B57; */
                 font-size: 40px;
             }
             .material-symbols-outlined{
@@ -213,14 +215,20 @@
                 font-size: 40px;
             }
             #search_chinese{
+                top: 20%;
                 width: 420px;
                 height: 60px;
                 left: 39%;
+
+                border: 4px solid #85b1e0;
             }
             #strat_serch{
+                top: 20%;
                 font-size: 20px;
                 width: 70px;
                 height: 70px;
+
+                border: 4px solid #85b1e0;
             }
             #back_the_check_finish{
                 width: 48%;
@@ -240,7 +248,7 @@
                 font-size: 36px;
                 display: inline;
                 top: 20%;
-                left: 16%;
+                left: 14%;
                 color: #000000;
             }
             #b{
@@ -257,8 +265,8 @@
 <body id="background_color">
     <div id="head_line">
         <div id="other_page">
-            <h1 id="title_page" style="border-left: 10px solid #123B57;">&nbsp;&nbsp;查字词</h1>
-            <h1 id="big_title_page">&nbsp;&nbsp;随机字词</h1>
+            <h1 id="title_page">&nbsp;&nbsp;查字词</h1>
+            <h1 id="big_title_page">&nbsp;&nbsp;查字词</h1>
             <div id="move_choose">
                 <a href="https://infinitymark.github.io/random_classical_chinese_test.github.io/"><h1 id="a">随机字词</h1></a>
                 <a href="https://infinitymark.github.io/article.github.io/"><h1 id="b">课文</h1></a>
@@ -296,7 +304,7 @@
         let tu=document.getElementById("tu")
         let time="1s"
         let white="#ffffff"
-        let dark="#1c1c1c"
+        let dark="#151515"
 
         let search_chinese=document.getElementById("search_chinese")
         let strat_serch=document.getElementById("strat_serch")
@@ -326,7 +334,7 @@
 
             search_chinese.style.transitionDuration=time
             search_chinese.style.backgroundColor=dark
-            search_chinese.style.border="3px solid #ffffff"
+            search_chinese.style.border="3px solid #85b1e0"
             search_chinese.style.color=white
 
             big_title_page.style.transitionDuration=time
@@ -334,7 +342,7 @@
 
             strat_serch.style.backgroundColor=dark
             strat_serch.style.transitionDuration=time
-            strat_serch.style.border="3px solid #ffffff"
+            strat_serch.style.border="3px solid #85b1e0"
             strat_serch.style.color=white
 
             if(window.innerWidth>1000){
@@ -360,12 +368,12 @@
 
             search_chinese.style.transitionDuration=time
             search_chinese.style.backgroundColor=white
-            search_chinese.style.border="3px solid #000000"
+            search_chinese.style.border="3px solid #85b1e0"
             search_chinese.style.color="#000000"
 
             strat_serch.style.backgroundColor=white
             strat_serch.style.transitionDuration=time
-            strat_serch.style.border="3px solid #000000"
+            strat_serch.style.border="3px solid #85b1e0"
             strat_serch.style.color="#000000"
 
             if(window.innerWidth>1000){
