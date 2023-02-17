@@ -196,6 +196,23 @@
             z-index: 999;
             display: none;
         }
+        #go_next{
+            color: #000000;
+            width: 80px;
+            position: absolute;
+            top: 35%;
+            right: -15%;
+            transform: translate(-30%,-50%);
+        }
+        #go_before{
+            float: left;
+            color: #000000;
+            width: 80px;
+            position: absolute;
+            top: 35%;
+            right: 65%;
+            transform: translate(-30%,-50%);
+        }
 
         @media only screen and (min-width: 700px){
             #title_page{
@@ -259,6 +276,14 @@
                 color: #000000;
                 margin-left: 0px;
             }
+            #go_next{
+                font-size: 50px;
+                right: 7%;
+            }
+            #go_before{
+                font-size: 50px;
+                right: 50%;
+            }
         }
     </style>
 </head>
@@ -284,6 +309,8 @@
         <input type="text" id="search_chinese"><button id="strat_serch" onclick="go_to_check()">查询</button>
     </div>
 
+    <span class="material-symbols-outlined" id="go_before">arrow_back_ios</span>
+    <span class="material-symbols-outlined" id="go_next">arrow_forward_ios</span>
     <div id="back_the_check_finish">
         <h1 id="classical_chinese" class="out_word">请输入:)</h1>
         <!-- <br id="br"> -->
@@ -291,6 +318,7 @@
         <br>
         <br>
         <p id="where_from_paragh"></p>
+        
         <!-- <h3 id="where_from_lesson" style="margin-left: 10px;margin-bottom: 20px;">测试</h3> -->
     </div>
 
@@ -308,6 +336,9 @@
 
         let search_chinese=document.getElementById("search_chinese")
         let strat_serch=document.getElementById("strat_serch")
+
+        let go_next = document.getElementById("go_next")
+        let go_before = document.getElementById("go_before")
 
         // if(window.innerWidth==394 || window.innerWidth==393){
         //     tu.style.display="flex"
@@ -345,6 +376,12 @@
             strat_serch.style.border="3px solid #85b1e0"
             strat_serch.style.color=white
 
+            go_next.style.transitionDuration=time
+            go_next.style.color=white
+
+            go_before.style.transitionDuration=time
+            go_before.style.color=white
+
             if(window.innerWidth>1000){
                 a.style.transitionDuration=time
                 a.style.color=white
@@ -375,6 +412,12 @@
             strat_serch.style.transitionDuration=time
             strat_serch.style.border="3px solid #85b1e0"
             strat_serch.style.color="#000000"
+
+            go_next.style.transitionDuration=time
+            go_next.style.color="#000000"
+
+            go_before.style.transitionDuration=time
+            go_before.style.color="#000000"
 
             if(window.innerWidth>1000){
                 a.style.transitionDuration=time
@@ -419,7 +462,7 @@
                 "疚","憂","懼","成","美","成","惡","反","是","恥","其言而過其行","義","質","行","孫/逊","信","成","病","能","病",
                 "知","求","求","向","始","志","是岁","辟","如使","莫","欲","得兼","舍","生","义","甚于","苟","恶","患",
                 "则","使","为","由是则生","是故","是","丧","弗","呼尔","己","廟堂","江湖","進","退","微","吾誰與歸","歸","已","謂",
-                // ["与","蹴尔","屑","辩","加","奉","得","鄉","今"],
+                "与","蹴尔","屑","辩","加","奉","得","鄉","今",
 
                 "良","為","之","捨人","之","遺","謀","徒","見","患","報","使","何","以","嘗","竊","亡走","君","語","彊",
                 "西入","奏","卻","書","悉","負","布衣","逆","庭","嚴","幸","乃","束","斧質","幸","曲","均","負","必","奉",
@@ -431,7 +474,7 @@
                 "驽","独","顾","念","以","今","私雠","负","因","宽"
             ]
             let classical_chinese_hk_list=[
-            "惑","固","乎","聞","庸","嗟乎","傳","出","猶且","下","恥","是故","益","其","身","惑矣","彼","句讀","其道","遺",
+                "惑","固","乎","聞","庸","嗟乎","傳","出","猶且","下","恥","是故","益","其","身","惑矣","彼","句讀","其道","遺",
                 "明","相師","相似","卑","羞","諛","复","不齒","乃","常","賢","賢於","專攻","好","經傳","餘","嘉","貽","隨意","歇",
                 "謫","守","越","通","和","具","乃","增","制","屬","予","之","予","勝","銜","浩浩湯湯","橫","際涯","暉","則",
                 "之","備","通","極","遷客","騷人","會","覽","得","無異","霪雨","霏霏","開","排","隱","耀","潛","形","傾","摧",
@@ -451,7 +494,7 @@
                 "疚","憂","懼","成","美","成","惡","反","是","恥","其言而過其行","義","質","行","孫/遜","信","成","病","能","病",
                 "知","求","求","向","始","志","是歲","闢","如使","莫","欲","得兼","舍","生","義","甚於","苟","惡","患",
                 "則","使","為","由是則生","是故","是","喪","弗","呼爾","己","廟堂","江湖","進","退","微","吾誰與歸","歸","已","謂",
-                // ["與","蹴爾","屑","辯","加","奉","得","鄉","今"],
+                "與","蹴爾","屑","辯","加","奉","得","鄉","今",
 
                 "良","為","之","捨人","之","遺","謀","徒","見","患","報","使","何","以","嘗","竊","亡走","君","語","彊",
                 "西入","奏","卻","書","悉","負","布衣","逆","庭","嚴","幸","乃","束","斧質","幸","曲","均","負","必","奉",
@@ -463,7 +506,7 @@
                 "駑","獨","顧","念","以","今","私讎","負","因","寬"
             ]
             let classical_chinese_traslate_list=[
-            "疑惑","一定","在","知道","哪","唉","传授","超出","尚且","不如","为耻；羞耻","因此","更加","大概","他们自己","令人不解啊！","那","句子完结处和停顿处","人生道理","遗弃","明智","互相学习","差不多","低下","羞耻","阿谀奉承","恢复","不屑一提","竟然","固定","才智","有才能，贤良","各有专长","喜欢","正文和相关解释","我","嘉奖","赠送","任由","凋謝",
+                "疑惑","一定","在","知道","哪","唉","传授","超出","尚且","不如","为耻；羞耻","因此","更加","大概","他们自己","令人不解啊！","那","句子完结处和停顿处","人生道理","遗弃","明智","互相学习","差不多","低下","羞耻","阿谀奉承","恢复","不屑一提","竟然","固定","才智","有才能，贤良","各有专长","喜欢","正文和相关解释","我","嘉奖","赠送","任由","凋謝",
                 "被貶官/貶謫","出任太守/做太守","到了","通達/順和","和樂","全部/全都","於是","擴大","規模","囑咐/囑託","我","(重修岳陽樓)這件事","我","美好的/美麗的","張開口含着 (連結)","水勢洶湧/浩大/波瀾壯闊","寬闊/寬廣/廣闊","邊際","陽光","就是","的","完備/詳盡","通往/通向","通往/直達","被降職而遠調的官員","失意的文人","聚集","觀賞","能","不同/分別","連綿不斷的雨","雨水細的樣子","放晴","衝向","隱沒","光輝","隱沒/隱藏","行跡","傾倒","折斷",
                 "有時","消散","榮寵","屈辱","曾經","探求","或許","表現","因為","外在環境的好壞/順逆","這","離開","傍晚時天色昏暗","進讒/谗言","譏諷","的樣子","陽光","停歇/停息","香氣濃郁","花葉茂盛","會/懂得","只是","同伴","和"," 趁著","約定","遙遠","客居異鄉","多災多難;内忧外患","變幻不定","我","这个","时常","恐惧不安","空闲","慢慢地","漫无目的地 ","每天","同伴","走到尽头",
                 //使得西山宴游记
@@ -476,7 +519,7 @@
                 "实践仁德","智慧","得到利益","正当的方法","接受","厌恶","摆脱","抛弃","怎样","吃完一顿饭的时间(短暂的时间)","违背仁德","仓促","受到挫折","必定坚持仁德","约束直接的私欲，使言行符合礼节","吗","条目","看","做","聪明;聪敏","实行","这","为了生存","牺牲生命","成全","孝道","不要违背礼节","驾驶马车","对他;回答","意思","侍奉","安葬","祭祀","供养(父母)","没有心存敬意","分别","委婉","劝谏","意见","听从",
                 "违背","担忧","怨恨","年龄","知道","开心","担忧","庄重","威严","牢固","忠心","诚信","结交","不及","害怕","(心胸)坦然宽广","忧愁恐惧","(什么是)君子","了吗","反省","内疚","忧愁","恐惧","成全","好事","促成","坏事","相反","这","羞耻","说得多，做的少;说了而没实行","合义","本质","实行","谦逊","诚恳","完成","担忧","才能","担忧",
                 "知道;赏识","要求","要求/苛求","以前","开始","记录","这一年","逃避","如果","没有","想要","同时得到","捨弃","生命","仁义","比……更重要","随便","讨厌","灾祸","那么","如果","做","可以求得生存的办法","所以","这种","失去","不","呼喝着","自己/個人的得失","朝廷","民間","做官","辭官隱退/不做官","沒有","我還可以歸依/跟從誰呢","歸依/跟從","停止","称为",
-                // ["给予","践踏着","洁净","分辨","好处","侍奉","感恩","过去","现在"],
+                "给予","践踏着","洁净","分辨","好处","侍奉","感恩","过去","现在",
 
                 "優秀","擔任","代詞：齊軍","門客/食客（住在有地位的人家中出謀劃策）","這件事/這個消息(赵有玉璧)","送給","商議","白白/只是","被","擔憂","回覆","出使/作為使者","什麼","憑","曾經","暗中/私下","逃亡/逃走","你","告訴","強大",
                 "向西往","獻給","後退","信","全部/所有","依仗/憑著","平民","違逆","朝廷","尊重","寵信/寵愛","卻","捆綁","刑具","僥倖","理虧","比較/衡量","使⋯背上⋯責任","如果","捧",
@@ -488,7 +531,7 @@
                 "無能/能力低下","難道","但是","考慮","因為 徒（只是）","假如/如果","個人恩怨","背負","憑藉/經由","寬宏大量"
             ]
             let classical_chinese_paragraph=[
-            "孰能无惑","固先乎吾","固先乎吾","其闻道也","夫庸知其年之先后","嗟乎！师道之不传也久矣！","嗟乎！师道之不传也久矣！","其出人也远矣","犹且从师而问焉","其下圣人也亦远矣","而耻学于师","是故圣益圣","是故圣益圣","其皆出于此乎？","于其身也，则耻师焉","惑矣！","彼童子之师","授之书而习其句读者","非吾所谓传其道解其惑者也","小学而大遗",
+                "孰能无惑","固先乎吾","固先乎吾","其闻道也","夫庸知其年之先后","嗟乎！师道之不传也久矣！","嗟乎！师道之不传也久矣！","其出人也远矣","犹且从师而问焉","其下圣人也亦远矣","而耻学于师","是故圣益圣","是故圣益圣","其皆出于此乎？","于其身也，则耻师焉","惑矣！","彼童子之师","授之书而习其句读者","非吾所谓传其道解其惑者也","小学而大遗",
                 "吾未见其明也","不耻相师","彼与彼年相若也，道相似也","位卑则足羞","位卑则足羞","官盛则近谀","师道之不复，可知矣","巫医乐师百工之人，君子不齿","今其智乃反不能及","圣人无常师","郯子之徒，其贤不及孔子","师不必贤于弟子","闻道有先后，术业有专攻","好古文","六艺经传皆通习之","学于余","余嘉其能行古道","作《师说》以贻之","隨意春芳歇","隨意春芳歇",
                 "滕子京謫守巴陵郡","滕子京謫守巴陵郡","越明年","政通人和","政通人和","百廢具興","乃重修岳陽樓","增其舊制","增其舊制","屬予作文以記之","屬予作文以記之","屬予作文以記之","予觀夫巴陵勝狀","予觀夫巴陵勝狀","銜遠山","浩浩湯湯","橫無際涯","橫無際涯","朝暉夕陰","此則岳陽樓之大觀也",
                 "此則岳陽樓之大觀也","前人之述備矣","然則北通巫峽","南極瀟湘","遷客騷人","遷客騷人","多會於此","覽物之情","得無異乎","得無異乎","若夫霪雨霏霏","若夫霪雨霏霏","連月不開","濁浪排空","日星隱耀","日星隱耀","山岳潛形","山岳潛形","檣傾楫摧","檣傾楫摧",
@@ -508,7 +551,7 @@
                 "內省不疚","夫何憂何懼？","夫何憂何懼？","君子成人之美","君子成人之美","不成人之惡","不成人之惡","小人反是","小人反是","君子恥其言而過其行","君子恥其言而過其行","君子義以為質","君子義以為質","禮以行之","孫/逊 以出之","信以成之","信以成之","君子病無能焉","君子病無能焉","不病人之不己知也",
                 "不病人之不己知也","君子求諸己","小人求諸人","然后知吾向之未始游","游于是乎始","故为之文以志","是岁","故患有所不辟也","如使人之所欲莫甚于生","如使人之所欲莫甚于生","鱼，我所欲也","二者不可得兼","舍鱼而取熊掌也","生亦我所欲也","义亦我所欲","所欲有甚于生者","故不为苟得也","死亦我所恶","故患有所不辟也",
                 "则凡可以得生者，何不用也？","使人之所恶莫甚于死者","何不为也","由是则生而有不用也","是故所欲有甚于生者","非独贤者有是心也","贤者能勿丧耳","弗得则死","呼尔而与之","不以己悲","居廟堂之高","處江湖之遠","是進亦憂","退亦憂","微斯人","吾誰與歸(倒裝句)","吾誰與歸","是亦不可以已乎","此之谓失其本心",
-                // ["呼尔而与之","蹴尔而与之","乞人不屑也","万钟则不变礼仪而受之","万钟于我何加焉","妻妾之奉","所识穷乏者得我与","鄉为身死而不受","今为宫室之美而为之"],
+                "呼尔而与之","蹴尔而与之","乞人不屑也","万钟则不变礼仪而受之","万钟于我何加焉","妻妾之奉","所识穷乏者得我与","鄉为身死而不受","今为宫室之美而为之",
 
                 "趙之良將也","廉頗為趙將","大破之","為趙宦者令繆賢舍人","秦昭王聞之","使人遺趙王書","趙王與大將軍廉頗諸大臣謀","徒見欺","徒見欺（被動句）","即患秦兵之來（即：就）","求人可使報秦者","臣舍人藺相如可使","何以知之（憑甚麼知道他可以呢？）","何以知之（憑甚麼知道他可以呢？）","臣嘗有罪","竊計欲亡走燕","竊計欲亡走燕","君何以知燕王","臣語曰","夫趙彊而燕弱",
                 "趙王於是遂遣相如奉璧西入秦","相如奉璧奏秦王","相如因持璧卻立","使人發書至趙王","趙王悉召羣臣議","負其彊(強大)","臣以為布衣之交尚不相欺","且一璧之故逆彊秦之驩（歡）","拜送書於庭","嚴大國之威以修敬也","而君幸於趙王","今君乃亡趙走燕","而束君歸趙矣","君不如肉袒（赤裸上身）伏斧質請罪","則幸得脫矣","曲在趙/曲在秦","均之二策","寧許以負秦曲","王必無人","臣願奉璧往使",
@@ -522,54 +565,73 @@
             
             let classical_chinese_list_number=classical_chinese_list.length
             let a=0
+            let done_arry=new Array()
 
             //back_the_check_finish.style.transitionDuration=time
                     
             for(let i=0;i<=classical_chinese_list_number;i++){
                 if(search_chinese_value==classical_chinese_list[i] || search_chinese_value==classical_chinese_hk_list[i]){
                     // console.log("Hello")
-                    back_the_check_finish.style.display="block"
-                    classical_chinese.innerText=classical_chinese_list[i]+"："
+                    // back_the_check_finish.style.display="block"
+                    // classical_chinese.innerText=classical_chinese_list[i]+"："
+                    // // br.style.display="block"
+                    // translate_the_word.innerText=classical_chinese_traslate_list[i]
+                    // where_from_paragh.innerText="“"+classical_chinese_paragraph[i]+"”"
+                    // search_chinese.value=""
+                    done_arry.push(i)
+                }
+            }
+            console.log(done_arry)
+
+            let done_arry_i=0
+            let add_or_reduce=1
+            if(done_arry.length>0){
+                back_the_check_finish.style.display="block"
+                    classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
                     // br.style.display="block"
-                    translate_the_word.innerText=classical_chinese_traslate_list[i]
-                    where_from_paragh.innerText="“"+classical_chinese_paragraph[i]+"”"
-                    search_chinese.value=""
-                    // let arrss=new Array
-                    // classical_chinese_list
-                    // arrss[0]=classical_chinese_list[i]
-                    // arrss[1]=classical_chinese_list[i]
-                    // console.log(arrss)
-                    // console.log(classical_chinese_list)
-                    // delete classical_chinese_list[i]
-                    // continue
-                    // if(search_chinese_value==classical_chinese_list[i]){
-                    //     alert("Hello")
-                    // }
-                    break
-                }
-                else{
-                    // console.log("World")
-                    // classical_chinese_list=classical_chinese_list.shift()
-                    back_the_check_finish.style.display="flex"
-                    classical_chinese.innerText="没有此字"
-                    translate_the_word.innerText=""
-                    where_from_paragh.innerText=""
-                    // alert("还没有记录噢")
-                }
+                    translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
+                    where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
+                    search_chinese.value=""  
+                go_next.addEventListener("click",function(){
+                    if(done_arry_i==done_arry.length){
+                        add_or_reduce=0
+                    }
+                    else{
+                        add_or_reduce=1
+                    }
+                    done_arry_i=done_arry_i+add_or_reduce
+                    back_the_check_finish.style.display="block"
+                    classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
+                    // br.style.display="block"
+                    translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
+                    where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
+                    search_chinese.value=""  
+                })
+                go_before.addEventListener("click",function(){
+                    if(done_arry_i==done_arry.length){
+                        add_or_reduce=0
+                    }
+                    else{
+                        add_or_reduce=1
+                    }
+                    done_arry_i=done_arry_i-done_arry_i
+                    back_the_check_finish.style.display="block"
+                    classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
+                    // br.style.display="block"
+                    translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
+                    where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
+                    search_chinese.value=""  
+                })
+            }
+            else{
+                back_the_check_finish.style.display="flex"
+                classical_chinese.innerText="没有此字"
+                translate_the_word.innerText=""
+                where_from_paragh.innerText=""
             }
 
-            // for(let search_chinese_value in classical_chinese_list){
-            //     alert("i")
-            //     break
-            // }
-                // if(search_chinese_value in classical_chinese_list === false){
-                //     alert("hello")
-                // }
-                // if(search_chinese_value in classical_chinese_list === true){
-                //     alert("gooooood")
-                // }
-            }
-            
+        }
+           
                   
 
             // setTimeout(try_a,1000)
