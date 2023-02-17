@@ -638,44 +638,44 @@
                     search_chinese.value=""  
                 })
             }
-            if(more_than_one_word_arry.length>0){
-                back_the_check_finish.style.display="block"
-                    classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
-                    // br.style.display="block"
-                    translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
-                    where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
-                    search_chinese.value=""  
-                go_next.addEventListener("click",function(){
-                    if(done_arry_i==done_arry.length){
-                        add_or_reduce=0
-                    }
-                    else{
-                        add_or_reduce=1
-                    }
-                    done_arry_i=done_arry_i+add_or_reduce
-                    back_the_check_finish.style.display="block"
-                    classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
-                    // br.style.display="block"
-                    translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
-                    where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
-                    search_chinese.value=""  
-                })
-                go_before.addEventListener("click",function(){
-                    if(done_arry_i==done_arry.length){
-                        add_or_reduce=0
-                    }
-                    else{
-                        add_or_reduce=1
-                    }
-                    done_arry_i=done_arry_i-done_arry_i
-                    back_the_check_finish.style.display="block"
-                    classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
-                    // br.style.display="block"
-                    translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
-                    where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
-                    search_chinese.value=""  
-                })
-            }
+            // if(more_than_one_word_arry.length>0){
+            //     back_the_check_finish.style.display="block"
+            //         classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
+            //         // br.style.display="block"
+            //         translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
+            //         where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
+            //         search_chinese.value=""  
+            //     go_next.addEventListener("click",function(){
+            //         if(done_arry_i==done_arry.length){
+            //             add_or_reduce=0
+            //         }
+            //         else{
+            //             add_or_reduce=1
+            //         }
+            //         done_arry_i=done_arry_i+add_or_reduce
+            //         back_the_check_finish.style.display="block"
+            //         classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
+            //         // br.style.display="block"
+            //         translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
+            //         where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
+            //         search_chinese.value=""  
+            //     })
+            //     go_before.addEventListener("click",function(){
+            //         if(done_arry_i==done_arry.length){
+            //             add_or_reduce=0
+            //         }
+            //         else{
+            //             add_or_reduce=1
+            //         }
+            //         done_arry_i=done_arry_i-done_arry_i
+            //         back_the_check_finish.style.display="block"
+            //         classical_chinese.innerText=classical_chinese_list[done_arry[done_arry_i]]+"："
+            //         // br.style.display="block"
+            //         translate_the_word.innerText=classical_chinese_traslate_list[done_arry[done_arry_i]]
+            //         where_from_paragh.innerText="“"+classical_chinese_paragraph[done_arry[done_arry_i]]+"”"
+            //         search_chinese.value=""  
+            //     })
+            // }
             else{
                 back_the_check_finish.style.display="flex"
                 classical_chinese.innerText="没有此字"
