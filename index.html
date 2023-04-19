@@ -37,7 +37,7 @@
             font-size: 26px;
             float: left;
 
-            border-left: 10px solid #123B57;
+            border-left: 10px solid #359ce1;
         }
         #big_title_page{
             color: #000000;
@@ -124,8 +124,8 @@
             margin-right: 10px;
             /* text-align: center; */
 
-            border-radius: 20px;
-            border: 3px solid #85b1e0;
+            /* border-radius: 20px; */
+            border: 0px solid #85b1e0;
 
             text-align: center;
             
@@ -213,6 +213,22 @@
             right: 65%;
             transform: translate(-30%,-50%);
         }
+        #strat_serch_png{
+            margin-top: 5px;
+            width: 53px;
+            height: 53px;
+            /* margin-right: 10px; */
+            /* text-align: center; */
+
+            /* border-radius: 20px; */
+            /* border: 3px solid #85b1e0; */
+
+            text-align: center;
+            
+            /* position: absolute;
+            left: 82%;
+            top: 14%; */
+        }
 
         @media only screen and (min-width: 700px){
             #title_page{
@@ -245,8 +261,13 @@
                 width: 70px;
                 height: 70px;
 
-                border: 4px solid #85b1e0;
+                border: 0px solid #85b1e0;
             }
+            #strat_serch_png{
+                width: 64px;
+                height: 64px;
+            }
+
             #back_the_check_finish{
                 width: 48%;
                 /* float: left; */
@@ -306,7 +327,7 @@
         <br>
         <br>
         <br>
-        <input type="text" id="search_chinese"><button id="strat_serch" onclick="go_to_check()">查询</button>
+        <input type="text" id="search_chinese"><button id="strat_serch" onclick="go_to_check()"><img src="https://raw.githubusercontent.com/infinityMark/bus_take.github.io/main/search.png" alt="" id="strat_serch_png"></button>
     </div>
 
     <span class="material-symbols-outlined" id="go_before">arrow_back_ios</span>
@@ -573,18 +594,15 @@
                 if(search_chinese_value==classical_chinese_list[i] || search_chinese_value==classical_chinese_hk_list[i]){
                     done_arry.push(i)
                 }
-                // let more_serch_number = search_chinese_value.length
-                // var second_loop = classical_chinese_list[i].length
-                // let second_loop_number = 0
                 else{
                     var the_new_word = String(classical_chinese_list[i])
-                    // var the_new_word_number = the_new_word.length
-                    for(let x = 0;x<=5;x++){
+                    var the_new_word_number = the_new_word.length
+                    for(let x = 0;x<=the_new_word_number;x++){
                         if(search_chinese_value==the_new_word[x] || search_chinese_value==the_new_word[x]){
                             done_arry.push(i)
                         }
                     }
-                    console.log(done_arry)    
+                    // console.log(done_arry)
                 }
                 
             }
@@ -639,8 +657,6 @@
 
         }
            
-                  
-
             // setTimeout(try_a,1000)
             // function try_a() {
             //     // start_btn.style.transitionDuration=time
@@ -731,10 +747,6 @@
             
             strat_serch.style.display="none"
             search_chinese.style.display="none"
-
-            // if(window.innerWidth==394 || window.innerWidth==393){
-            //     tree.style.marginBottom="-30px"
-            // }
         })
 
         back.addEventListener("click",function(){
